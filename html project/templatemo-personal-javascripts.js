@@ -109,6 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (container) {
 
+        // صور غلاف مناسبة لكل شرح؛ يمكن استبدالها بصورك الخاصة لاحقاً.
+        function getTutorialImage(tutorial) {
+            const covers = {
+                1: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85",
+                2: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85",
+                3: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85"
+            };
+            return covers[tutorial.id] || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85";
+        }
+
         // عرض قائمة الشروحات
         function renderTutorialsList() {
             container.className = 'portfolio-grid';
@@ -119,21 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.className = 'portfolio-item';
                 card.style.cursor = 'pointer';
 
+                const cover = getTutorialImage(tutorial);
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.setAttribute('aria-label', 'افتح: ' + tutorial.title);
                 card.innerHTML = `
+                    <div class="portfolio-card-image">
+                        <img src="${cover}" alt="${tutorial.title}" loading="lazy">
+                    </div>
                     <div class="portfolio-content">
+                        <span class="card-category">HADOOR TECH / شرح تقني</span>
                         <h4>${tutorial.title}</h4>
                         <p>${tutorial.desc}</p>
-                        <span style="
-                            display:inline-block;
-                            padding:0.5rem 1rem;
-                            background:var(--primary-color);
-                            color:white;
-                            border-radius:20px;
-                            font-size:0.85rem;
-                            font-weight:bold;
-                            margin-top:1rem;">
-                            اقرأ المقال والشرح ←
-                        </span>
+                        <span class="card-action">اقرأ المقال والشرح</span>
                     </div>
                 `;
 
@@ -165,9 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = '';
 
             const article = document.createElement('div');
+            article.className = 'article-page';
 
             article.innerHTML = `
-                <div style="
+                <div class="article-panel" style="
                     background:var(--bg-card, #fff);
                     padding:clamp(1rem, 4vw, 3rem);
                     border-radius:30px;
@@ -194,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${tutorial.title}
                     </h2>
 
-                    <div style="
+                    <div class="article-body" style="
                         font-size:1.1rem;
                         color:var(--text-secondary);
                         margin-bottom:2.5rem;
@@ -205,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     ${tutorial.downloadUrl ? `
                         <div style="margin:2.5rem 0;text-align:center;">
-                            <a href="${tutorial.downloadUrl}"
+                            <a class="article-download" href="${tutorial.downloadUrl}"
                                target="_blank"
                                rel="noopener noreferrer"
                                style="
@@ -236,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         📺 مشاهدة الشرح الكامل على يوتيوب
                     </h3>
 
-                    <div style="
+                    <div class="article-video" style="
                         position:relative;
                         padding-bottom:56.25%;
                         height:0;
@@ -262,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
 
-                <div style="margin-top:4rem;">
+                <div class="other-tutorials" style="margin-top:4rem;">
                     <h3 style="
                         font-size:1.5rem;
                         margin-bottom:2rem;
@@ -308,20 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     otherCard.style.cursor = 'pointer';
 
                     otherCard.innerHTML = `
+                        <div class="portfolio-card-image">
+                            <img src="${getTutorialImage(other)}" alt="${other.title}" loading="lazy">
+                        </div>
                         <div class="portfolio-content">
+                            <span class="card-category">HADOOR TECH / شرح تقني</span>
                             <h4>${other.title}</h4>
                             <p>${other.desc}</p>
-                            <span style="
-                                display:inline-block;
-                                padding:0.4rem 1rem;
-                                background:var(--primary-color);
-                                color:white;
-                                border-radius:20px;
-                                font-size:0.85rem;
-                                font-weight:bold;
-                                margin-top:1rem;">
-                                اقرأ المقال ←
-                            </span>
+                            <span class="card-action">اقرأ المقال</span>
                         </div>
                     `;
 
