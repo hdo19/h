@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0e">
+  <meta name="description" content="اقرأ الشرح التقني بالتفصيل على Hadoor Tech.">
+  <title>المقال | حدور تك - Hadoor Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hadoor-redesign.css?v=20261022">
+  <link rel="stylesheet" href="article-page.css?v=20261022">
+</head>
+<body class="article-site">
+  <header class="article-topbar">
+    <a class="article-brand" href="./index.html">حدور تك <span>HADOOR TECH</span></a>
+    <a class="article-home-link" href="./index.html#portfolio">← كل الشروحات</a>
+  </header>
+  <main class="article-layout">
+    <div id="articleStatus" class="article-status">جارٍ تحميل المقال...</div>
+    <article id="articleContent" class="article-detail hidden"></article>
+    <section id="commentsSection" class="comments-section hidden">
+      <div class="comments-heading"><div><span class="article-eyebrow">COMMUNITY</span><h2>التعليقات والنقاش</h2><p>شاركنا رأيك أو اسأل عن خطوة في الشرح.</p></div><span id="commentCount" class="comment-count">0 تعليق</span></div>
+      <div id="authPanel" class="auth-panel">
+        <div class="auth-copy"><h3 id="authTitle">سجّل الدخول للمشاركة</h3><p id="authHint">يمكنك قراءة المقال دون حساب، لكن كتابة التعليق تتطلب تسجيل الدخول.</p></div>
+        <form id="authForm" class="auth-form">
+          <label id="nameField" class="hidden">الاسم الظاهر<input id="displayName" type="text" maxlength="60" placeholder="الاسم الذي سيظهر مع تعليقك"></label>
+          <label>البريد الإلكتروني<input id="authEmail" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+          <label>كلمة المرور<input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="6 أحرف على الأقل"></label>
+          <button id="authSubmit" class="article-button primary-button" type="submit">تسجيل الدخول</button>
+          <button id="authSwitch" class="auth-switch" type="button">ليس لديك حساب؟ أنشئ حساباً</button>
+        </form>
+        <div id="authMessage" class="inline-message" aria-live="polite"></div>
+      </div>
+      <div id="commentComposer" class="comment-composer hidden">
+        <div class="signed-in-row"><span id="signedInAs"></span><button id="signOutButton" class="text-button" type="button">تسجيل الخروج</button></div>
+        <form id="commentForm">
+          <label for="commentBody">اكتب تعليقك</label>
+          <textarea id="commentBody" rows="4" maxlength="2000" required placeholder="اكتب تعليقاً محترماً أو اطرح سؤالك..."></textarea>
+          <div class="composer-bottom"><span>الحد الأقصى 2000 حرف</span><button id="commentSubmit" class="article-button primary-button" type="submit">نشر التعليق</button></div>
+        </form>
+      </div>
+      <div id="commentsMessage" class="inline-message" aria-live="polite"></div>
+      <div id="commentsList" class="comments-list"><p class="muted-text">جارٍ تحميل التعليقات...</p></div>
+    </section>
+    <div class="back-to-articles"><a href="./index.html#portfolio">← العودة إلى جميع الشروحات</a></div>
+  </main>
+  <footer class="article-footer">© 2026 حدور تك - Hadoor Tech · التقنية بأسلوب أبسط</footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    window.hadoorSupabase = window.supabase.createClient(
+      'https://bhdyuczpallzpycgvunt.supabase.co',
+      'sb_publishable_BFNnJ8qBMBIrkVmXUfgsOg_atT0IYgt'
+    );
+  </script>
+  <script src="article-page.js?v=20261022"></script>
+</body>
+</html>
