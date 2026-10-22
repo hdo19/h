@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080a0e">
+<title>الحساب | حدور تك</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hadoor-redesign.css?v=20261023"><link rel="stylesheet" href="auth-page.css?v=20261023">
+</head>
+<body class="auth-site">
+<header class="auth-topbar"><a class="auth-brand" href="./index.html">حدور تك <span>HADOOR TECH</span></a><a href="./index.html" class="auth-back">العودة للموقع ←</a></header>
+<main class="auth-layout">
+<section class="auth-card">
+<div class="auth-logo-mark">H</div><span class="auth-eyebrow">HADOOR TECH COMMUNITY</span>
+<h1 id="pageTitle">مرحباً بعودتك</h1><p id="pageDescription" class="auth-description">سجّل الدخول حتى تشارك في النقاشات وتكتب تعليقاتك.</p>
+<div id="authAlert" class="auth-alert hidden" role="status" aria-live="polite"></div>
+<form id="signupForm" class="auth-form hidden">
+<label>الاسم الظاهر<input id="signupName" maxlength="60" autocomplete="name" placeholder="الاسم الذي سيظهر مع تعليقاتك" required></label>
+<label>البريد الإلكتروني<input id="signupEmail" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+<label>كلمة المرور<input id="signupPassword" type="password" minlength="8" autocomplete="new-password" placeholder="8 أحرف على الأقل" required></label>
+<label>تأكيد كلمة المرور<input id="signupPassword2" type="password" minlength="8" autocomplete="new-password" placeholder="أعد كتابة كلمة المرور" required></label>
+<button class="auth-primary" type="submit">إنشاء الحساب وإرسال رمز التحقق</button>
+<p class="auth-small">سنرسل رمزاً إلى بريدك الإلكتروني لتأكيد ملكيته قبل إكمال التسجيل.</p>
+</form>
+<form id="loginForm" class="auth-form">
+<label>البريد الإلكتروني<input id="loginEmail" type="email" autocomplete="email" placeholder="name@example.com" required></label>
+<label>كلمة المرور<input id="loginPassword" type="password" autocomplete="current-password" placeholder="كلمة المرور" required></label>
+<button class="auth-primary" type="submit">تسجيل الدخول</button>
+<button id="forgotLink" class="auth-link" type="button">نسيت كلمة المرور؟</button>
+</form>
+<form id="verifyForm" class="auth-form hidden">
+<label>رمز التحقق المرسل إلى بريدك<input id="verifyCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="أدخل الرمز الموجود في البريد" required></label>
+<button class="auth-primary" type="submit">تأكيد البريد الإلكتروني</button>
+<button id="resendCode" class="auth-link" type="button">إعادة إرسال رمز التحقق</button>
+</form>
+<form id="forgotForm" class="auth-form hidden">
+<label>البريد الإلكتروني<input id="forgotEmail" type="email" autocomplete="email" placeholder="البريد المسجل في حسابك" required></label>
+<button class="auth-primary" type="submit">إرسال رمز استعادة كلمة المرور</button>
+<button class="auth-link switch-mode" data-mode="login" type="button">العودة إلى تسجيل الدخول</button>
+</form>
+<form id="recoveryVerifyForm" class="auth-form hidden">
+<label>رمز استعادة كلمة المرور<input id="recoveryCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="أدخل الرمز المرسل إلى بريدك" required></label>
+<button class="auth-primary" type="submit">التحقق من الرمز</button>
+</form>
+<form id="newPasswordForm" class="auth-form hidden">
+<label>كلمة المرور الجديدة<input id="newPassword" type="password" minlength="8" autocomplete="new-password" placeholder="8 أحرف على الأقل" required></label>
+<label>تأكيد كلمة المرور الجديدة<input id="newPassword2" type="password" minlength="8" autocomplete="new-password" placeholder="أعد كتابة كلمة المرور" required></label>
+<button class="auth-primary" type="submit">حفظ كلمة المرور الجديدة</button>
+</form>
+<div id="socialDivider" class="social-divider"><span>أو تابع باستخدام</span></div>
+<button id="googleLogin" class="google-button" type="button"><span class="google-g">G</span> المتابعة باستخدام Google</button>
+<div id="modeSwitch" class="mode-switch"><span>ليس لديك حساب؟</span> <a href="auth.html?mode=signup">إنشاء حساب جديد</a></div>
+</section>
+<p class="auth-privacy">بتسجيل الدخول، يمكنك المشاركة في تعليقات Hadoor Tech. لا نعرض كلمة مرورك لأي مستخدم آخر.</p>
+</main>
+<footer class="auth-footer">© 2026 حدور تك - Hadoor Tech</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+window.hadoorSupabase = window.supabase.createClient('https://bhdyuczpallzpycgvunt.supabase.co','sb_publishable_BFNnJ8qBMBIrkVmXUfgsOg_atT0IYgt');
+</script>
+<script src="auth-page.js?v=20261023"></script>
+</body></html>
