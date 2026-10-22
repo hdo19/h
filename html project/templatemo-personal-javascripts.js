@@ -154,22 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
 
-                // فتح المقال مباشرة دون إعادة تحميل الصفحة
-                card.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    history.pushState(
-                        { articleId: tutorial.id },
-                        '',
-                        `#article-${tutorial.id}`
-                    );
-
-                    renderSingleArticle(tutorial);
-
-                    window.scrollTo({
-                        top: container.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
+                // افتح صفحة مستقلة للمقال حتى يكون له رابط خاص قابل للمشاركة.
+                card.addEventListener('click', () => {
+                    const articleKey = tutorial.slug || String(tutorial.id);
+                    window.location.href = 'article.html?slug=' + encodeURIComponent(articleKey);
                 });
 
                 container.appendChild(card);
@@ -337,21 +325,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `;
 
-                    otherCard.addEventListener('click', (e) => {
-                        e.preventDefault();
-
-                        history.pushState(
-                            { articleId: other.id },
-                            '',
-                            `#article-${other.id}`
-                        );
-
-                        renderSingleArticle(other);
-
-                        window.scrollTo({
-                            top: container.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
+                    otherCard.addEventListener('click', () => {
+                        const articleKey = other.slug || String(other.id);
+                        window.location.href = 'article.html?slug=' + encodeURIComponent(articleKey);
                     });
 
                     otherGrid.appendChild(otherCard);
