@@ -136,6 +136,14 @@
         </div>
     </footer>
 
-    <script src="templatemo-personal-javascripts.js?v=20261021"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Publishable key is intended for browser use; table access is protected by RLS.
+        window.hadoorSupabase = window.supabase.createClient(
+            'https://bhdyuczpallzpycgvunt.supabase.co',
+            'sb_publishable_BFNnJ8qBMBIrkVmXUfgsOg_atT0IYgt'
+        );
+    </script>
+    <script src="templatemo-personal-javascripts.js?v=20261022"></script>
 </body>
 </html>
