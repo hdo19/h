@@ -2,7 +2,7 @@
  // ==========================================
  // قاعدة بيانات الشروحات والمقالات التفصيلية
  // ==========================================
-const myChannelTutorials = [
+let myChannelTutorials = [
     {
         id: 1,
         title: "شرح برنامج استرجاع الملفات المحذوفة R-Studio",
@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // صور غلاف مناسبة لكل شرح؛ يمكن استبدالها بصورك الخاصة لاحقاً.
         function getTutorialImage(tutorial) {
+            if (tutorial.imageUrl) return tutorial.imageUrl;
+
             const covers = {
                 1: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85",
                 2: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=85",
@@ -373,8 +375,46 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('popstate', checkUrlAndRender);
         window.addEventListener('hashchange', checkUrlAndRender);
 
-        // العرض الأولي
+        // العرض الأولي: اعرض المحتوى المحلي فوراً، ثم حدّثه من Supabase عند نجاح الاتصال.
         checkUrlAndRender();
+
+        async function loadArticlesFromSupabase() {
+            if (!window.hadoorSupabase) {
+                console.warn('Supabase client is not configured; using local articles.');
+                return;
+            }
+
+            try {
+                const { data, error } = await window.hadoorSupabase
+                    .from('articles')
+                    .select('id, title, slug, description, content, image_url, download_url, video_url, tools, published')
+                    .eq('published', true)
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                // Keep the local articles as a fallback if the database has no published rows.
+                if (!Array.isArray(data) || data.length === 0) return;
+
+                myChannelTutorials = data.map((row) => ({
+                    id: row.id,
+                    slug: row.slug,
+                    title: row.title,
+                    desc: row.description || '',
+                    tools: row.tools ? row.tools.split(',').map(item => item.trim()).filter(Boolean) : [],
+                    articleContent: row.content || '',
+                    imageUrl: row.image_url || '',
+                    downloadUrl: row.download_url || '',
+                    videoUrl: row.video_url || ''
+                }));
+
+                checkUrlAndRender();
+            } catch (error) {
+                console.error('Could not load published articles from Supabase. Using local articles.', error);
+            }
+        }
+
+        loadArticlesFromSupabase();
     }
 
     // ==========================================
