@@ -97,7 +97,7 @@
   async function loadComments() {
     if (!article) return;
     const list = $('commentsList'); list.replaceChildren();
-    const { data, error } = await db.from('article_comments').select('id,author_name,body,created_at').eq('article_id',article.id).order('created_at',{ascending:false});
+    const { data, error } = await db.from('article_comments').select('id,author_name,body,created_at').eq('article_slug',article.slug).order('created_at',{ascending:false});
     if (error) {
       list.appendChild(node('p','muted-text','تعذّر تحميل التعليقات. تأكد من تنفيذ إعدادات قاعدة البيانات الموضحة مع التحديث.'));
       $('commentCount').textContent = '— تعليق'; return;
@@ -138,7 +138,7 @@
     const button = $('commentSubmit'); button.disabled = true; message('commentsMessage','جارٍ نشر التعليق...');
     try {
       const author = String(currentUser.user_metadata?.display_name || currentUser.email?.split('@')[0] || 'مستخدم').slice(0,60);
-      const { error } = await db.from('article_comments').insert({ article_id:article.id, user_id:currentUser.id, author_name:author, body });
+      const { error } = await db.from('article_comments').insert({ article_slug:article.slug, user_id:currentUser.id, author_name:author, body });
       if (error) throw error;
       $('commentBody').value = ''; message('commentsMessage','تم نشر تعليقك. شكراً لمشاركتك!','success'); await loadComments();
     } catch(error) { message('commentsMessage',error.message || 'تعذّر نشر التعليق. تحقق من سياسات قاعدة البيانات.','error'); }
