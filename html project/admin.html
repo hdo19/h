@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة الإدارة | Hadoor Tech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#080b12;--panel:#101621;--panel2:#151e2c;--line:#263244;--text:#edf4ff;--muted:#91a0b5;--blue:#3b82f6;--cyan:#22d3ee;--red:#f87171;--green:#34d399}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#10213a 0,transparent 38%),var(--bg);color:var(--text);font-family:Cairo,system-ui,sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+    .wrap{width:min(1200px,calc(100% - 32px));margin:auto}.topbar{border-bottom:1px solid var(--line);background:#080b12d9;backdrop-filter:blur(12px)}.topinner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#06101e;font-weight:900;font-size:21px;box-shadow:0 0 28px #3b82f633}.brand small{display:block;color:var(--muted);font-weight:500;font-size:12px}.top-actions{display:flex;gap:10px;align-items:center}.pill{font-size:12px;color:#a5d8ff;border:1px solid #244568;border-radius:99px;padding:6px 10px}
+    .main{padding:34px 0 60px}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.08em}.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.35;margin:6px 0}.hero p{color:var(--muted);margin:0;max-width:650px;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.stat,.panel{background:linear-gradient(145deg,#121a27,#0d131d);border:1px solid var(--line);border-radius:18px}.stat{padding:18px}.stat span{color:var(--muted);font-size:13px}.stat strong{display:block;font-size:28px;margin-top:5px}.panel{padding:22px;margin:18px 0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.panel h2{font-size:18px;margin:0}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#c8d4e5;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#090e16;border:1px solid #2b394d;border-radius:11px;padding:12px 13px;color:var(--text);outline:none;transition:border .15s}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3b82f61c}.field textarea{min-height:135px;resize:vertical;line-height:1.9}.hint{color:var(--muted);font-size:12px}.checkrow{display:flex;align-items:center;gap:9px;color:#c8d4e5;font-size:14px}.checkrow input{accent-color:var(--blue);width:17px;height:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid transparent;border-radius:11px;padding:10px 16px;font-weight:700;font-size:13px;display:inline-flex;justify-content:center;align-items:center;gap:8px}.primary{background:linear-gradient(135deg,#2563eb,#0891b2);color:white}.secondary{background:#192333;color:#dce8f7;border-color:#2a3a50}.danger{background:#35191f;color:#fecaca;border-color:#65303b}.btn:disabled{opacity:.5;cursor:not-allowed}.notice{padding:12px 14px;border:1px solid #2b3c52;background:#101b2b;border-radius:12px;color:#cbd8e8;font-size:13px;margin:14px 0}.notice.error{border-color:#7f3038;background:#2a1419;color:#fecaca}.notice.success{border-color:#216b53;background:#0e241e;color:#a7f3d0}
+    .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:700px}th,td{padding:13px 14px;text-align:right;border-bottom:1px solid #202b3a;font-size:13px}th{color:#9eb1ca;background:#111a27;font-weight:700}td{color:#dbe6f5}tr:last-child td{border-bottom:0}.arttitle{font-weight:700;max-width:360px}.subline{color:var(--muted);font-size:11px;margin-top:3px}.status{display:inline-flex;padding:4px 9px;border-radius:99px;font-size:11px;font-weight:700}.published{background:#103326;color:#86efac}.draft{background:#322715;color:#fcd34d}.rowactions{display:flex;gap:7px}.rowactions .btn{padding:6px 10px;font-size:12px}.loginbox{max-width:440px;margin:9vh auto;padding:28px}.loginbox h1{font-size:27px;margin:16px 0 5px}.loginbox>p{color:var(--muted);font-size:13px;margin:0 0 24px}.loginbox .field{margin-bottom:15px}.footer{text-align:center;color:#63738b;font-size:12px;margin-top:28px}
+    @media(max-width:720px){.hero{display:block}.hero .btn{margin-top:15px}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:23px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:15px}.topinner{align-items:flex-start}.top-actions{flex-wrap:wrap;justify-content:flex-end}.pill{display:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="wrap topinner">
+    <div class="brand"><div class="logo">H</div><div>Hadoor Tech<small>لوحة إدارة المحتوى</small></div></div>
+    <div class="top-actions"><span id="adminBadge" class="pill hidden">جلسة مدير موثّقة</span><button id="logoutBtn" class="btn secondary hidden" type="button">تسجيل الخروج ↗</button></div>
+  </div></header>
+  <main class="wrap main">
+    <section id="loginView" class="panel loginbox">
+      <div class="logo">H</div><div class="eyebrow">SECURE ADMIN ACCESS</div><h1>أهلاً بك من جديد</h1><p>سجّل الدخول بحساب المدير الذي أنشأته في Supabase.</p>
+      <form id="loginForm">
+        <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" type="email" autocomplete="username" required placeholder="name@example.com"></div>
+        <div class="field"><label for="password">كلمة المرور</label><input id="password" type="password" autocomplete="current-password" required placeholder="أدخل كلمة المرور"></div>
+        <button id="loginBtn" class="btn primary" type="submit" style="width:100%">تسجيل الدخول <span>←</span></button>
+      </form><div id="loginMessage" aria-live="polite"></div>
+      <div class="footer">Hadoor Tech · مساحة إدارة خاصة</div>
+    </section>
+
+    <section id="dashboardView" class="hidden">
+      <div class="hero"><div><div class="eyebrow">CONTENT CONTROL CENTER</div><h1>إدارة المقالات والشروحات</h1><p>أضف شروحاتك وعدّلها وتحكّم بالنشر من مكان واحد. صلاحيات الحفظ تُفرض من قاعدة البيانات أيضاً.</p></div><a class="btn secondary" href="./index.html" target="_blank" rel="noopener">عرض الموقع ↗</a></div>
+      <div class="stats">
+        <div class="stat"><span>كل المقالات التي يمكن إدارتها</span><strong id="totalCount">—</strong></div>
+        <div class="stat"><span>منشور</span><strong id="publishedCount">—</strong></div>
+        <div class="stat"><span>مسودة / مخفي</span><strong id="draftCount">—</strong></div>
+      </div>
+      <div id="dashboardMessage" aria-live="polite"></div>
+      <section class="panel" id="editorPanel">
+        <div class="panelhead"><h2 id="editorTitle">＋ إضافة مقال جديد</h2><span class="pill">EDITOR</span></div>
+        <form id="articleForm">
+          <input id="articleId" type="hidden">
+          <div class="formgrid">
+            <div class="field"><label for="title">عنوان المقال *</label><input id="title" required maxlength="180" placeholder="اكتب عنواناً واضحاً"></div>
+            <div class="field"><label for="slug">الرابط المختصر (Slug) *</label><input id="slug" required maxlength="180" placeholder="article-title"><span class="hint">يفضّل رابطاً إنجليزياً قصيراً وفريداً.</span></div>
+            <div class="field full"><label for="description">وصف مختصر</label><textarea id="description" rows="2" style="min-height:78px" maxlength="500" placeholder="ملخص يظهر في بطاقة المقال"></textarea></div>
+            <div class="field full"><label for="content">محتوى المقال *</label><textarea id="content" required placeholder="اكتب الشرح هنا. النص العادي والأسطر الجديدة مدعومان."></textarea><span class="hint">اكتب النص فقط في هذه النسخة؛ لا تلصق أكواد HTML غير موثوقة.</span></div>
+            <div class="field"><label for="imageUrl">رابط صورة الغلاف</label><input id="imageUrl" type="url" placeholder="https://..."></div>
+            <div class="field"><label for="videoUrl">رابط فيديو يوتيوب Embed</label><input id="videoUrl" type="url" placeholder="https://www.youtube.com/embed/VIDEO_ID"></div>
+            <div class="field"><label for="downloadUrl">رابط التحميل</label><input id="downloadUrl" type="url" placeholder="https://..."></div>
+            <div class="field"><label for="tools">الأدوات المطلوبة</label><input id="tools" placeholder="ويندوز، برنامج، هاتف (افصل بينها بفاصلة)"></div>
+            <div class="field full"><label class="checkrow"><input id="published" type="checkbox" checked> نشر المقال على الموقع مباشرة</label></div>
+          </div>
+          <div class="actions"><button id="saveBtn" class="btn primary" type="submit">حفظ المقال</button><button id="resetBtn" class="btn secondary" type="button">مقال جديد / إلغاء التعديل</button></div>
+        </form>
+      </section>
+      <section class="panel">
+        <div class="panelhead"><h2>المقالات الحالية</h2><button id="refreshBtn" class="btn secondary" type="button">↻ تحديث القائمة</button></div>
+        <div class="tablewrap"><table><thead><tr><th>المقال</th><th>الحالة</th><th>آخر تحديث</th><th>الإجراءات</th></tr></thead><tbody id="articlesBody"><tr><td colspan="4">جارٍ تحميل المقالات...</td></tr></tbody></table></div>
+      </section>
+      <div class="footer">لا تشارك كلمة المرور أو مفاتيح المشروع مع أي شخص.</div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (() => {
+      'use strict';
+      const SUPABASE_URL = 'https://bhdyuczpallzpycgvunt.supabase.co';
+      // Publishable key is designed for browser use. Never put a secret/service-role key here.
+      const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_BFNnJ8qBMBIrkVmXUfgsOg_atT0IYgt';
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+      const $ = (id) => document.getElementById(id);
+      const loginView = $('loginView'), dashboardView = $('dashboardView');
+      let articles = [];
+      let currentUser = null;
+
+      function showMessage(target, message, type='') {
+        target.replaceChildren();
+        if (!message) return;
+        const div = document.createElement('div');
+        div.className = 'notice' + (type ? ' ' + type : '');
+        div.textContent = message;
+        target.appendChild(div);
+      }
+      function friendlyError(error) {
+        const msg = error && error.message ? error.message : String(error || 'حدث خطأ غير معروف.');
+        if (/row-level security|permission denied|not allowed/i.test(msg)) return 'رفضت قاعدة البيانات العملية. تأكد من سياسات RLS الخاصة بالمديرين ثم جرّب مجدداً.';
+        if (/invalid login credentials/i.test(msg)) return 'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+        return msg;
+      }
+      function setBusy(button, busy, label) {
+        button.disabled = busy;
+        if (busy) { button.dataset.oldLabel = button.textContent; button.textContent = label || 'جارٍ التنفيذ...'; }
+        else if (button.dataset.oldLabel) { button.textContent = button.dataset.oldLabel; delete button.dataset.oldLabel; }
+      }
+      function safeText(value) { return value == null ? '' : String(value); }
+      function validHttpUrl(value) {
+        if (!value) return true;
+        try { const u = new URL(value); return u.protocol === 'https:' || u.protocol === 'http:'; }
+        catch { return false; }
+      }
+      function slugify(value) {
+        return value.toLowerCase().trim().normalize('NFKC').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '');
+      }
+      $('title').addEventListener('input', () => {
+        if (!$('articleId').value && !$('slug').dataset.edited) $('slug').value = slugify($('title').value);
+      });
+      $('slug').addEventListener('input', () => { $('slug').dataset.edited = '1'; });
+
+      async function checkAdmin(user) {
+        const { data, error } = await supabase.from('admins').select('user_id').eq('user_id', user.id).maybeSingle();
+        if (error) throw error;
+        return Boolean(data);
+      }
+      function showDashboard() {
+        loginView.classList.add('hidden'); dashboardView.classList.remove('hidden');
+        $('logoutBtn').classList.remove('hidden'); $('adminBadge').classList.remove('hidden');
+      }
+      function showLogin() {
+        dashboardView.classList.add('hidden'); loginView.classList.remove('hidden');
+        $('logoutBtn').classList.add('hidden'); $('adminBadge').classList.add('hidden');
+      }
+      async function enterForUser(user) {
+        currentUser = user;
+        const allowed = await checkAdmin(user);
+        if (!allowed) {
+          await supabase.auth.signOut();
+          currentUser = null; showLogin();
+          showMessage($('loginMessage'), 'تم تسجيل الدخول، لكن هذا الحساب غير مضاف إلى قائمة المديرين.', 'error');
+          return;
+        }
+        showDashboard();
+        await loadArticles();
+      }
+      $('loginForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        showMessage($('loginMessage'), '');
+        const button = $('loginBtn'); setBusy(button, true, 'جارٍ التحقق...');
+        try {
+          const { data, error } = await supabase.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+          if (error) throw error;
+          await enterForUser(data.user);
+        } catch (error) {
+          showMessage($('loginMessage'), friendlyError(error), 'error');
+        } finally { setBusy(button, false); }
+      });
+      $('logoutBtn').addEventListener('click', async () => {
+        await supabase.auth.signOut();
+        currentUser = null; articles = []; showLogin();
+        showMessage($('loginMessage'), 'تم تسجيل الخروج.', 'success');
+      });
+
+      async function loadArticles() {
+        showMessage($('dashboardMessage'), '');
+        $('articlesBody').replaceChildren();
+        const loading = document.createElement('tr'), cell = document.createElement('td');
+        cell.colSpan = 4; cell.textContent = 'جارٍ تحميل المقالات...'; loading.appendChild(cell); $('articlesBody').appendChild(loading);
+        try {
+          const { data, error } = await supabase.from('articles')
+            .select('id,title,slug,description,content,image_url,download_url,video_url,tools,published,created_at,updated_at')
+            .order('created_at', { ascending: false });
+          if (error) throw error;
+          articles = data || [];
+          $('totalCount').textContent = articles.length;
+          $('publishedCount').textContent = articles.filter(a => a.published).length;
+          $('draftCount').textContent = articles.filter(a => !a.published).length;
+          renderArticles();
+        } catch (error) {
+          articles = [];
+          $('articlesBody').replaceChildren();
+          const row = document.createElement('tr'), cell = document.createElement('td');
+          cell.colSpan = 4; cell.textContent = friendlyError(error); row.appendChild(cell); $('articlesBody').appendChild(row);
+          showMessage($('dashboardMessage'), 'تعذّر تحميل القائمة. إذا كانت سياسة قراءة جميع المقالات غير موجودة، نفّذ استعلام SQL المرفق في تعليمات الإعداد.', 'error');
+        }
+      }
+      function renderArticles() {
+        const body = $('articlesBody'); body.replaceChildren();
+        if (!articles.length) {
+          const row = document.createElement('tr'), cell = document.createElement('td');
+          cell.colSpan = 4; cell.textContent = 'لا توجد مقالات يمكن عرضها.'; body.appendChild(row).appendChild(cell); return;
+        }
+        for (const article of articles) {
+          const row = document.createElement('tr');
+          const titleCell = document.createElement('td'), title = document.createElement('div'), slug = document.createElement('div');
+          title.className = 'arttitle'; title.textContent = safeText(article.title);
+          slug.className = 'subline'; slug.textContent = '/' + safeText(article.slug);
+          titleCell.append(title, slug);
+          const statusCell = document.createElement('td'), status = document.createElement('span');
+          status.className = 'status ' + (article.published ? 'published' : 'draft');
+          status.textContent = article.published ? 'منشور' : 'مسودة'; statusCell.appendChild(status);
+          const dateCell = document.createElement('td');
+          const date = article.updated_at || article.created_at;
+          dateCell.textContent = date ? new Date(date).toLocaleDateString('ar-IQ') : '—';
+          const actionCell = document.createElement('td'), actions = document.createElement('div'); actions.className = 'rowactions';
+          const edit = document.createElement('button'); edit.type = 'button'; edit.className = 'btn secondary'; edit.textContent = 'تعديل';
+          edit.addEventListener('click', () => editArticle(article.id));
+          const toggle = document.createElement('button'); toggle.type = 'button'; toggle.className = 'btn secondary'; toggle.textContent = article.published ? 'إخفاء' : 'نشر';
+          toggle.addEventListener('click', () => togglePublished(article));
+          const del = document.createElement('button'); del.type = 'button'; del.className = 'btn danger'; del.textContent = 'حذف';
+          del.addEventListener('click', () => deleteArticle(article));
+          actions.append(edit, toggle, del); actionCell.appendChild(actions); row.append(titleCell, statusCell, dateCell, actionCell); body.appendChild(row);
+        }
+      }
+      function editArticle(id) {
+        const a = articles.find(item => String(item.id) === String(id)); if (!a) return;
+        $('articleId').value = a.id; $('title').value = safeText(a.title); $('slug').value = safeText(a.slug);
+        $('slug').dataset.edited = '1'; $('description').value = safeText(a.description); $('content').value = safeText(a.content);
+        $('imageUrl').value = safeText(a.image_url); $('videoUrl').value = safeText(a.video_url); $('downloadUrl').value = safeText(a.download_url);
+        $('tools').value = Array.isArray(a.tools) ? a.tools.join(', ') : safeText(a.tools);
+        $('published').checked = Boolean(a.published); $('editorTitle').textContent = '✎ تعديل المقال';
+        $('saveBtn').textContent = 'حفظ التعديلات'; $('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      function resetForm() {
+        $('articleForm').reset(); $('articleId').value = ''; $('slug').dataset.edited = '';
+        $('editorTitle').textContent = '＋ إضافة مقال جديد'; $('saveBtn').textContent = 'حفظ المقال';
+      }
+      $('resetBtn').addEventListener('click', resetForm);
+      $('refreshBtn').addEventListener('click', loadArticles);
+
+      $('articleForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (!currentUser) { showMessage($('dashboardMessage'), 'انتهت الجلسة؛ سجّل الدخول مجدداً.', 'error'); showLogin(); return; }
+        const urls = ['imageUrl','videoUrl','downloadUrl'];
+        for (const id of urls) {
+          if (!validHttpUrl($(id).value.trim())) { showMessage($('dashboardMessage'), 'أحد الروابط غير صحيح. استخدم رابطاً يبدأ بـ https:// أو http://', 'error'); $(id).focus(); return; }
+        }
+        const title = $('title').value.trim(), slug = $('slug').value.trim();
+        if (!title || !slug || !$('content').value.trim()) { showMessage($('dashboardMessage'), 'العنوان والرابط المختصر ومحتوى المقال مطلوبة.', 'error'); return; }
+        const payload = {
+          title, slug, description: $('description').value.trim(), content: $('content').value.trim(),
+          image_url: $('imageUrl').value.trim() || null, video_url: $('videoUrl').value.trim() || null,
+          download_url: $('downloadUrl').value.trim() || null, tools: $('tools').value.trim() || null,
+          published: $('published').checked
+        };
+        const button = $('saveBtn'); setBusy(button, true, 'جارٍ الحفظ...');
+        try {
+          let result;
+          if ($('articleId').value) {
+            result = await supabase.from('articles').update({...payload, updated_at: new Date().toISOString()}).eq('id', $('articleId').value).select('id').single();
+          } else {
+            result = await supabase.from('articles').insert(payload).select('id').single();
+          }
+          if (result.error) throw result.error;
+          showMessage($('dashboardMessage'), $('articleId').value ? 'تم حفظ تعديلات المقال بنجاح.' : 'تمت إضافة المقال بنجاح.', 'success');
+          resetForm(); await loadArticles();
+        } catch (error) { showMessage($('dashboardMessage'), friendlyError(error), 'error'); }
+        finally { setBusy(button, false); }
+      });
+      async function togglePublished(article) {
+        const {error} = await supabase.from('articles').update({published: !article.published, updated_at:new Date().toISOString()}).eq('id', article.id);
+        if (error) showMessage($('dashboardMessage'), friendlyError(error), 'error');
+        else { showMessage($('dashboardMessage'), article.published ? 'تم إخفاء المقال.' : 'تم نشر المقال.', 'success'); await loadArticles(); }
+      }
+      async function deleteArticle(article) {
+        if (!confirm('متأكد تريد حذف المقال «' + safeText(article.title) + '» نهائياً؟')) return;
+        const {error} = await supabase.from('articles').delete().eq('id', article.id);
+        if (error) showMessage($('dashboardMessage'), friendlyError(error), 'error');
+        else { if (String($('articleId').value) === String(article.id)) resetForm(); showMessage($('dashboardMessage'), 'تم حذف المقال.', 'success'); await loadArticles(); }
+      }
+
+      supabase.auth.getSession().then(async ({data, error}) => {
+        if (error) { showMessage($('loginMessage'), friendlyError(error), 'error'); return; }
+        if (data.session) {
+          try { await enterForUser(data.session.user); }
+          catch (error) { await supabase.auth.signOut(); showLogin(); showMessage($('loginMessage'), friendlyError(error), 'error'); }
+        }
+      });
+      supabase.auth.onAuthStateChange((event, session) => {
+        if (event === 'SIGNED_OUT' || !session) { currentUser = null; showLogin(); }
+      });
+    })();
+  </script>
+</body>
+</html>
