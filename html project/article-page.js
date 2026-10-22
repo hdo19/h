@@ -92,7 +92,21 @@
   function renderAuthState() {
     $('authPanel').classList.toggle('hidden', !!currentUser);
     $('commentComposer').classList.toggle('hidden', !currentUser);
-    if (currentUser) $('signedInAs').textContent = 'مسجّل الدخول: ' + (currentUser.user_metadata?.display_name || currentUser.email || 'مستخدم');
+    if (currentUser) {
+      $('signedInAs').textContent = 'مسجّل الدخول: ' + (currentUser.user_metadata?.display_name || currentUser.email || 'مستخدم');
+    } else {
+      const panel = $('authPanel');
+      panel.replaceChildren();
+      const copy = node('div','auth-copy');
+      copy.appendChild(node('h3','','سجّل الدخول حتى تكتب تعليقاً'));
+      copy.appendChild(node('p','','اقرأ المقال بحرية، وللمشاركة بالتعليقات أنشئ حساباً أو سجّل الدخول. تأكيد البريد واستعادة كلمة المرور متاحان من صفحة الحساب.'));
+      const links = node('div','auth-action-links');
+      const login = node('a','article-button primary-button','تسجيل الدخول');
+      login.href = 'auth.html?mode=login&next=' + encodeURIComponent(location.href);
+      const signup = node('a','article-button secondary-button','إنشاء حساب جديد');
+      signup.href = 'auth.html?mode=signup&next=' + encodeURIComponent(location.href);
+      links.append(login,signup); panel.append(copy,links);
+    }
   }
   async function loadComments() {
     if (!article) return;
