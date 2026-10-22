@@ -121,6 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return covers[tutorial.id] || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=85";
         }
 
+        // Treat all database/user-provided values as text before inserting them into HTML.
+        function escapeHtml(value) {
+            return String(value ?? '').replace(/[&<>"']/g, (char) => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[char]);
+        }
+
         // عرض قائمة الشروحات
         function renderTutorialsList() {
             container.className = 'portfolio-grid';
@@ -137,12 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.setAttribute('aria-label', 'افتح: ' + tutorial.title);
                 card.innerHTML = `
                     <div class="portfolio-card-image">
-                        <img src="${cover}" alt="${tutorial.title}" loading="lazy">
+                        <img src="${escapeHtml(cover)}" alt="${escapeHtml(tutorial.title)}" loading="lazy">
                     </div>
                     <div class="portfolio-content">
                         <span class="card-category">HADOOR TECH / شرح تقني</span>
-                        <h4>${tutorial.title}</h4>
-                        <p>${tutorial.desc}</p>
+                        <h4>${escapeHtml(tutorial.title)}</h4>
+                        <p>${escapeHtml(tutorial.desc)}</p>
                         <span class="card-action">اقرأ المقال والشرح</span>
                     </div>
                 `;
@@ -202,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         font-size:clamp(1.5rem, 4vw, 2.2rem);
                         color:var(--text-primary);
                         margin-bottom:1.5rem;">
-                        ${tutorial.title}
+                        ${escapeHtml(tutorial.title)}
                     </h2>
 
                     <div class="article-body" style="
@@ -211,12 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         margin-bottom:2.5rem;
                         line-height:2;
                         white-space:pre-line;">
-                        ${tutorial.articleContent}
+                        ${escapeHtml(tutorial.articleContent)}
                     </div>
 
                     ${tutorial.downloadUrl ? `
                         <div style="margin:2.5rem 0;text-align:center;">
-                            <a class="article-download" href="${tutorial.downloadUrl}"
+                            <a class="article-download" href="${escapeHtml(tutorial.downloadUrl)}"
                                target="_blank"
                                rel="noopener noreferrer"
                                style="
@@ -256,8 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         background:#000;">
 
                         <iframe
-                            src="${tutorial.videoUrl}"
-                            title="${tutorial.title}"
+                            src="${escapeHtml(tutorial.videoUrl)}"
+                            title="${escapeHtml(tutorial.title)}"
                             style="
                                 position:absolute;
                                 top:0;
@@ -320,12 +327,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     otherCard.innerHTML = `
                         <div class="portfolio-card-image">
-                            <img src="${getTutorialImage(other)}" alt="${other.title}" loading="lazy">
+                            <img src="${escapeHtml(getTutorialImage(other))}" alt="${escapeHtml(other.title)}" loading="lazy">
                         </div>
                         <div class="portfolio-content">
                             <span class="card-category">HADOOR TECH / شرح تقني</span>
-                            <h4>${other.title}</h4>
-                            <p>${other.desc}</p>
+                            <h4>${escapeHtml(other.title)}</h4>
+                            <p>${escapeHtml(other.desc)}</p>
                             <span class="card-action">اقرأ المقال</span>
                         </div>
                     `;
