@@ -13,7 +13,7 @@
     :root{color-scheme:dark;--bg:#080b12;--panel:#101621;--panel2:#151e2c;--line:#263244;--text:#edf4ff;--muted:#91a0b5;--blue:#3b82f6;--cyan:#22d3ee;--red:#f87171;--green:#34d399}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#10213a 0,transparent 38%),var(--bg);color:var(--text);font-family:Cairo,system-ui,sans-serif;min-height:100vh}button,input,textarea,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
     .wrap{width:min(1200px,calc(100% - 32px));margin:auto}.topbar{border-bottom:1px solid var(--line);background:#080b12d9;backdrop-filter:blur(12px)}.topinner{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#06101e;font-weight:900;font-size:21px;box-shadow:0 0 28px #3b82f633}.brand small{display:block;color:var(--muted);font-weight:500;font-size:12px}.top-actions{display:flex;gap:10px;align-items:center}.pill{font-size:12px;color:#a5d8ff;border:1px solid #244568;border-radius:99px;padding:6px 10px}
-    .main{padding:34px 0 60px}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.08em}.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.35;margin:6px 0}.hero p{color:var(--muted);margin:0;max-width:650px;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.stat,.panel{background:linear-gradient(145deg,#121a27,#0d131d);border:1px solid var(--line);border-radius:18px}.stat{padding:18px}.stat span{color:var(--muted);font-size:13px}.stat strong{display:block;font-size:28px;margin-top:5px}.panel{padding:22px;margin:18px 0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.panel h2{font-size:18px;margin:0}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#c8d4e5;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#090e16;border:1px solid #2b394d;border-radius:11px;padding:12px 13px;color:var(--text);outline:none;transition:border .15s}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3b82f61c}.field textarea{min-height:135px;resize:vertical;line-height:1.9}.hint{color:var(--muted);font-size:12px}.checkrow{display:flex;align-items:center;gap:9px;color:#c8d4e5;font-size:14px}.checkrow input{accent-color:var(--blue);width:17px;height:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid transparent;border-radius:11px;padding:10px 16px;font-weight:700;font-size:13px;display:inline-flex;justify-content:center;align-items:center;gap:8px}.primary{background:linear-gradient(135deg,#2563eb,#0891b2);color:white}.secondary{background:#192333;color:#dce8f7;border-color:#2a3a50}.danger{background:#35191f;color:#fecaca;border-color:#65303b}.btn:disabled{opacity:.5;cursor:not-allowed}.notice{padding:12px 14px;border:1px solid #2b3c52;background:#101b2b;border-radius:12px;color:#cbd8e8;font-size:13px;margin:14px 0}.notice.error{border-color:#7f3038;background:#2a1419;color:#fecaca}.notice.success{border-color:#216b53;background:#0e241e;color:#a7f3d0}
+    .main{padding:34px 0 60px}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.08em}.hero h1{font-size:clamp(26px,4vw,38px);line-height:1.35;margin:6px 0}.hero p{color:var(--muted);margin:0;max-width:650px;font-size:14px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}.stat,.panel{background:linear-gradient(145deg,#121a27,#0d131d);border:1px solid var(--line);border-radius:18px}.stat{padding:18px}.stat span{color:var(--muted);font-size:13px}.stat strong{display:block;font-size:28px;margin-top:5px}.panel{padding:22px;margin:18px 0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.panel h2{font-size:18px;margin:0}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#c8d4e5;font-weight:700}.field input,.field textarea,.field select{width:100%;background:#090e16;border:1px solid #2b394d;border-radius:11px;padding:12px 13px;color:var(--text);outline:none;transition:border .15s}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3b82f61c}.field textarea{min-height:135px;resize:vertical;line-height:1.9}.hint{color:var(--muted);font-size:12px}.uploadbox{border:1px dashed #38506e;background:#0b121d;border-radius:12px;padding:14px;display:grid;gap:10px}.uploadbox input[type=file]{width:100%;color:var(--muted);font-size:12px}.imagepreview{display:none;max-width:100%;max-height:240px;object-fit:contain;border-radius:10px;border:1px solid var(--line);background:#080b12}.uploadstatus{font-size:12px;color:var(--muted)}.checkrow{display:flex;align-items:center;gap:9px;color:#c8d4e5;font-size:14px}.checkrow input{accent-color:var(--blue);width:17px;height:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid transparent;border-radius:11px;padding:10px 16px;font-weight:700;font-size:13px;display:inline-flex;justify-content:center;align-items:center;gap:8px}.primary{background:linear-gradient(135deg,#2563eb,#0891b2);color:white}.secondary{background:#192333;color:#dce8f7;border-color:#2a3a50}.danger{background:#35191f;color:#fecaca;border-color:#65303b}.btn:disabled{opacity:.5;cursor:not-allowed}.notice{padding:12px 14px;border:1px solid #2b3c52;background:#101b2b;border-radius:12px;color:#cbd8e8;font-size:13px;margin:14px 0}.notice.error{border-color:#7f3038;background:#2a1419;color:#fecaca}.notice.success{border-color:#216b53;background:#0e241e;color:#a7f3d0}
     .tablewrap{overflow:auto;border:1px solid var(--line);border-radius:13px}table{width:100%;border-collapse:collapse;min-width:700px}th,td{padding:13px 14px;text-align:right;border-bottom:1px solid #202b3a;font-size:13px}th{color:#9eb1ca;background:#111a27;font-weight:700}td{color:#dbe6f5}tr:last-child td{border-bottom:0}.arttitle{font-weight:700;max-width:360px}.subline{color:var(--muted);font-size:11px;margin-top:3px}.status{display:inline-flex;padding:4px 9px;border-radius:99px;font-size:11px;font-weight:700}.published{background:#103326;color:#86efac}.draft{background:#322715;color:#fcd34d}.rowactions{display:flex;gap:7px}.rowactions .btn{padding:6px 10px;font-size:12px}.loginbox{max-width:440px;margin:9vh auto;padding:28px}.loginbox h1{font-size:27px;margin:16px 0 5px}.loginbox>p{color:var(--muted);font-size:13px;margin:0 0 24px}.loginbox .field{margin-bottom:15px}.footer{text-align:center;color:#63738b;font-size:12px;margin-top:28px}
     @media(max-width:720px){.hero{display:block}.hero .btn{margin-top:15px}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:23px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:15px}.topinner{align-items:flex-start}.top-actions{flex-wrap:wrap;justify-content:flex-end}.pill{display:none}}
   </style>
@@ -51,7 +51,7 @@
             <div class="field"><label for="slug">الرابط المختصر (Slug) *</label><input id="slug" required maxlength="180" placeholder="article-title"><span class="hint">يفضّل رابطاً إنجليزياً قصيراً وفريداً.</span></div>
             <div class="field full"><label for="description">وصف مختصر</label><textarea id="description" rows="2" style="min-height:78px" maxlength="500" placeholder="ملخص يظهر في بطاقة المقال"></textarea></div>
             <div class="field full"><label for="content">محتوى المقال *</label><textarea id="content" required placeholder="اكتب الشرح هنا. النص العادي والأسطر الجديدة مدعومان."></textarea><span class="hint">اكتب النص فقط في هذه النسخة؛ لا تلصق أكواد HTML غير موثوقة.</span></div>
-            <div class="field"><label for="imageUrl">رابط صورة الغلاف</label><input id="imageUrl" type="url" placeholder="https://..."></div>
+            <div class="field full"><label for="imageFile">صورة الغلاف من الكمبيوتر</label><div class="uploadbox"><input id="imageFile" type="file" accept="image/jpeg,image/png,image/webp"><span class="hint">JPG أو PNG أو WebP — الحد الأقصى 5 MB. عند اختيار صورة تُرفع تلقائياً عند حفظ المقال.</span><img id="imagePreview" class="imagepreview" alt="معاينة صورة الغلاف"><span id="uploadStatus" class="uploadstatus" aria-live="polite">لم يتم اختيار صورة جديدة.</span></div><label for="imageUrl">أو رابط صورة موجود (اختياري)</label><input id="imageUrl" type="url" placeholder="https://..."></div>
             <div class="field"><label for="videoUrl">رابط فيديو يوتيوب Embed</label><input id="videoUrl" type="url" placeholder="https://www.youtube.com/embed/VIDEO_ID"></div>
             <div class="field"><label for="downloadUrl">رابط التحميل</label><input id="downloadUrl" type="url" placeholder="https://..."></div>
             <div class="field"><label for="tools">الأدوات المطلوبة</label><input id="tools" placeholder="ويندوز، برنامج، هاتف (افصل بينها بفاصلة)"></div>
@@ -105,6 +105,50 @@
         try { const u = new URL(value); return u.protocol === 'https:' || u.protocol === 'http:'; }
         catch { return false; }
       }
+      let selectedImageFile = null;
+      let previewObjectUrl = null;
+      const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+      const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+      $('imageFile').addEventListener('change', () => {
+        const file = $('imageFile').files && $('imageFile').files[0];
+        selectedImageFile = null;
+        if (previewObjectUrl) { URL.revokeObjectURL(previewObjectUrl); previewObjectUrl = null; }
+        $('imagePreview').removeAttribute('src');
+        $('imagePreview').style.display = 'none';
+        if (!file) { $('uploadStatus').textContent = 'لم يتم اختيار صورة جديدة.'; return; }
+        if (!ALLOWED_IMAGE_TYPES.includes(file.type)) {
+          $('imageFile').value = '';
+          $('uploadStatus').textContent = 'نوع الملف غير مدعوم. اختر JPG أو PNG أو WebP.';
+          return;
+        }
+        if (file.size > MAX_IMAGE_BYTES) {
+          $('imageFile').value = '';
+          $('uploadStatus').textContent = 'حجم الصورة أكبر من 5 MB. قلّل حجمها ثم جرّب مجدداً.';
+          return;
+        }
+        selectedImageFile = file;
+        previewObjectUrl = URL.createObjectURL(file);
+        $('imagePreview').src = previewObjectUrl;
+        $('imagePreview').style.display = 'block';
+        $('uploadStatus').textContent = 'الصورة جاهزة: ' + file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB). ستُرفع عند حفظ المقال.';
+      });
+      async function uploadCoverImage(file) {
+        if (!currentUser) throw new Error('سجّل الدخول قبل رفع الصورة.');
+        const ext = file.type === 'image/png' ? 'png' : file.type === 'image/webp' ? 'webp' : 'jpg';
+        const path = currentUser.id + '/' + (crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2)) + '.' + ext;
+        $('uploadStatus').textContent = 'جارٍ رفع الصورة إلى مساحة التخزين...';
+        const { error } = await supabase.storage.from('article-images').upload(path, file, {
+          contentType: file.type,
+          cacheControl: '31536000',
+          upsert: false
+        });
+        if (error) throw error;
+        const { data } = supabase.storage.from('article-images').getPublicUrl(path);
+        if (!data || !data.publicUrl) throw new Error('تم رفع الصورة لكن تعذّر إنشاء رابطها العام.');
+        $('uploadStatus').textContent = 'تم رفع الصورة بنجاح.';
+        return data.publicUrl;
+      }
+
       function slugify(value) {
         return value.toLowerCase().trim().normalize('NFKC').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '');
       }
@@ -211,13 +255,13 @@
         const a = articles.find(item => String(item.id) === String(id)); if (!a) return;
         $('articleId').value = a.id; $('title').value = safeText(a.title); $('slug').value = safeText(a.slug);
         $('slug').dataset.edited = '1'; $('description').value = safeText(a.description); $('content').value = safeText(a.content);
-        $('imageUrl').value = safeText(a.image_url); $('videoUrl').value = safeText(a.video_url); $('downloadUrl').value = safeText(a.download_url);
+        $('imageUrl').value = safeText(a.image_url); $('imageFile').value = ''; selectedImageFile = null; $('imagePreview').removeAttribute('src'); $('imagePreview').style.display = 'none'; $('uploadStatus').textContent = a.image_url ? 'الصورة الحالية محفوظة بالرابط أدناه. اختر ملفاً لاستبدالها.' : 'لم يتم اختيار صورة جديدة.'; $('videoUrl').value = safeText(a.video_url); $('downloadUrl').value = safeText(a.download_url);
         $('tools').value = Array.isArray(a.tools) ? a.tools.join(', ') : safeText(a.tools);
         $('published').checked = Boolean(a.published); $('editorTitle').textContent = '✎ تعديل المقال';
         $('saveBtn').textContent = 'حفظ التعديلات'; $('editorPanel').scrollIntoView({behavior:'smooth',block:'start'});
       }
       function resetForm() {
-        $('articleForm').reset(); $('articleId').value = ''; $('slug').dataset.edited = '';
+        $('articleForm').reset(); $('articleId').value = ''; $('slug').dataset.edited = ''; selectedImageFile = null; if (previewObjectUrl) { URL.revokeObjectURL(previewObjectUrl); previewObjectUrl = null; } $('imagePreview').removeAttribute('src'); $('imagePreview').style.display = 'none'; $('uploadStatus').textContent = 'لم يتم اختيار صورة جديدة.';
         $('editorTitle').textContent = '＋ إضافة مقال جديد'; $('saveBtn').textContent = 'حفظ المقال';
       }
       $('resetBtn').addEventListener('click', resetForm);
@@ -232,14 +276,16 @@
         }
         const title = $('title').value.trim(), slug = $('slug').value.trim();
         if (!title || !slug || !$('content').value.trim()) { showMessage($('dashboardMessage'), 'العنوان والرابط المختصر ومحتوى المقال مطلوبة.', 'error'); return; }
-        const payload = {
-          title, slug, description: $('description').value.trim(), content: $('content').value.trim(),
-          image_url: $('imageUrl').value.trim() || null, video_url: $('videoUrl').value.trim() || null,
-          download_url: $('downloadUrl').value.trim() || null, tools: $('tools').value.trim() || null,
-          published: $('published').checked
-        };
         const button = $('saveBtn'); setBusy(button, true, 'جارٍ الحفظ...');
         try {
+          let imageUrl = $('imageUrl').value.trim() || null;
+          if (selectedImageFile) imageUrl = await uploadCoverImage(selectedImageFile);
+          const payload = {
+            title, slug, description: $('description').value.trim(), content: $('content').value.trim(),
+            image_url: imageUrl, video_url: $('videoUrl').value.trim() || null,
+            download_url: $('downloadUrl').value.trim() || null, tools: $('tools').value.trim() || null,
+            published: $('published').checked
+          };
           let result;
           if ($('articleId').value) {
             result = await supabase.from('articles').update({...payload, updated_at: new Date().toISOString()}).eq('id', $('articleId').value).select('id').single();
